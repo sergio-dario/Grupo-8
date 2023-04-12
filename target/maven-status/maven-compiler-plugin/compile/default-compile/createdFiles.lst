@@ -1,0 +1,4 @@
+org\argentinaprograma\Stropeni\models\Pronostico.class
+org\argentinaprograma\Stropeni\models\EnumResultado.class
+org\argentinaprograma\Stropeni\models\Equipo.class
+org\argentinaprograma\Stropeni\models\Partido.class
