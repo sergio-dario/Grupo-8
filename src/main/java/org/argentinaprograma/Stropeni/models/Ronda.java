@@ -43,7 +43,8 @@ public void agregarRondadePartidos(Ronda ronda) {
 	}
 
 	public static int PuntosExtrasxRonda() {
-		int PuntosExtrasxRonda = 0;		
+		int PuntosExtrasxRonda = 0;	
+	
 		     PuntosExtrasxRonda = 5;
 		return PuntosExtrasxRonda;
 	}

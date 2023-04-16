@@ -59,9 +59,9 @@ public class Partido {
 			}			
 		} else {
 			
-			if(golesEq2>golesEq1) {
+			if(golesEq2<golesEq1) {
 				return EnumResultado.GANADOR;	
-			}	else {
+		}	else {
 				return EnumResultado.PERDEDOR;
 			}	
 		}

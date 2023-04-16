@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -19,7 +20,34 @@ public class App {
     
 
 	public static void main( String[] args ){
-    	
+    
+		//registrar el Driver
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		//crear el objeto de coneccion
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/SergioStropeni","root","Policloruro_de_Aluminio3");
+			// Creacion de sentencia
+		//	Statement stmt = con.createStatement();
+			
+		// ejecutamos y obtenemos los resultados de la sentencia (en este caso trae la columna2
+		// podria modificar la tabla	stmt.executeUpdate(null)
+		//	ResultSet rs = stmt.executeQuery("SELECT * FROM mydl.equipo");
+			//Recorrer el resultado que me devolvio
+		//	while(rs.next());
+			// aca hay que agregar el objeto resultade resultado = new Resultado....
+			
+		//	System.out.println(rs.getString(2));
+			// cierra la coneccion
+			con.close();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
     
 	// Leer resultados
 	Collection<Partido> partidos = new ArrayList<Partido>();
@@ -130,11 +158,13 @@ public class App {
 				
 			String  ganadores = pronostico.puntos(); 
 		
-				
+		
+		
 			  if (ganadores.equals(pronostico.getParticipante())) {
 				 
 				  nombres2.add(ganadores);
-			
+				
+				  
 				  
 				}}}}}
 			    	
@@ -156,8 +186,8 @@ public class App {
 			           }
                     
 			         System.out.println();
-			         System.out.println(Ronda.PuntosExtrasxRonda());
-			         System.out.println(Ronda.PuntosExtrasxFase());
+			//         System.out.println(Ronda.PuntosExtrasxRonda());
+			 //        System.out.println(Ronda.PuntosExtrasxFase());
 			         System.out.println(contador);
 	
 	
