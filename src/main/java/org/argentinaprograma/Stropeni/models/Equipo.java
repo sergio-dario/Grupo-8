@@ -4,15 +4,13 @@ package org.argentinaprograma.Stropeni.models;
 
 public class Equipo {
 	private String nombre;
-
+	private String descripcion;
+	
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-
-	private String descripcion;
-	
-	
 	
 	public Equipo(String nombre) {
 		this.nombre = nombre;

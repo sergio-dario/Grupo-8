@@ -1,5 +1,11 @@
-﻿Ronda,Equipo1,Cant.Goles1,Cant.Goles2,Equipo2
-1,Argentina,1,2,Arabia Saudita
-1,Polonia,0,0,Mexico
-1,Argentina,2,0,Mexico
-1,Arabia Saudita,0,2,Polonia
+﻿Ronda,Equipo1,Cant.Goles1,Cant.Goles2,Equipo2,fase
+1,Argentina,1,2,Arabia Saudita,1
+1,Polonia,0,0,Mexico,1
+1,Argentina,2,0,Mexico,1
+1,Arabia Saudita,0,2,Polonia,1
+2,Qatar,1,0,Ecuador,1
+2,Senegal,0,0,P.Bajos,1
+2,Qatar,1,0,Senegal,1
+2,Ecuador,0,0,P.Bajos,1
+1,Argentina,1,0,P.Bajos,2
+2,Mexico,2,1,Senegal,2

@@ -1,1 +1,1 @@
-SELECT * FROM pronostico.pronostico;
+SELECT * FROM pronostico.pronosticos;
