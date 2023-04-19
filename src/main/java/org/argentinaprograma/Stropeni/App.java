@@ -162,6 +162,8 @@ public class App {
 		
 				
 			String  ganadores = pronostico.puntos(); 
+			String ganadoresxRonda = pronostico.puntosxRonda();
+		//	String ganadoresxFase = pronostico.
 		   
 	
 		
