@@ -46,19 +46,9 @@ public class Ronda {
 		this.partidos = partidos;
 	}
 	
-	// tamaño de la fase elegida
+
 	
-	public  int fase() {
-		
-		int x=0;
-		for(Ronda fase : this.getPartidos()) {
-		
-			x= +Integer.parseInt(fase.nroFase);
 		}
-	return  x;
-		
-	
-		}}
 	
 
 

@@ -68,16 +68,9 @@ public class App {
 	        ronda.agregarRondadePartidos(ronda);;	      
 	       rondas.add(ronda);
 	        
-	    //   System.out.println(ronda.fase()); 
-			  
+	 
 		}}
 	
-              
-       
-	Integer tamañoFase = rondas.size();
-    
- //   System.out.println(tamañoFase); 
-    
 	// Leer pronostico
 	
 
