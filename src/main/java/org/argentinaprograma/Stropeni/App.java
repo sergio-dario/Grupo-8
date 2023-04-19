@@ -235,25 +235,40 @@ public class App {
 			               if (contador.containsKey(participanteG)) {
 			            	   
 			            	   // solo tengo que cambiar el 1 por el numero que quiera para aumentar el puntaje por ronda
-			                   contador.put(participanteG, contador.get(participanteG) + puntosxronda);
+			                   contador.put(participanteG, contador.get(participanteG) + 1);
 			               } else {
 			            	   // solo tengo que cambiar el 1 por el numero que quiera para aumentar el puntaje por ronda
 			            	   
-			                   contador.put(participanteG, puntosxronda);
+			                   contador.put(participanteG, 1);
 			              
 			               }
 			           }
-						
+			           for (String key : contador.keySet()) {					            
+				            Integer valor = contador.get(key);
+				            valor = valor * puntosxronda ;		               
+			                contador.put(key, valor);
+				            	System.out.println(key + "= Puntos por partido = "+valor);
+			           
+			           }
+				            	Integer puntosxFase= puntaje.getPuntosxFase();
+				            
+			           
 						  Map<String, Integer> contadorFase1 = new HashMap<>();
 						  
 						  for (String participanteFase1 : nombresFase1) { 
 							  if (contadorFase1.containsKey(participanteFase1)) {				  
 						 contadorFase1.put(participanteFase1, contadorFase1.get(participanteFase1) + 1);
                       } else { 
-                    	
-						  
+                    						  
 						  contadorFase1.put(participanteFase1, 1); 
 						  }}
+						  
+						  for (String key : contadorFase1.keySet()) {					            
+					            Integer valor = contadorFase1.get(key);
+					            if (valor > 7) {
+					            	System.out.println(key + "= Puntos extras Fase2 = "+puntosxFase);
+					            }}
+						  
                       Map<String, Integer> contadorFase2 = new HashMap<>();
 						  
 						  for (String participanteFase2 : nombresFase2) { 
@@ -264,10 +279,16 @@ public class App {
 						  
 						  contadorFase2.put(participanteFase2, 1); 
 						  }}
-			       
-			    System.out.println(contador+"->Los asiertos son 7 y 3 respectivamente, pero se multiplican x 2 por el valor de puntaje elegido");
-			        System.out.println(contadorFase1+"->para obtener puntaje extra en fase1 se necesitan 8 asiertos");
-			        System.out.println(contadorFase2+"->para obtener puntaje extra en fase2 se necesitan 2 asiertos");
+			
+						  for (String key : contadorFase2.keySet()) {					            
+					            Integer valor = contadorFase2.get(key);
+					            if (valor > 1) {
+					            	System.out.println(key + "= Puntos extras Fase1 = "+puntosxFase);
+					   
+					    }
+					}
+					       
+			    
 			     
 	
 		}}}}
