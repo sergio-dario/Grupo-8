@@ -18,6 +18,18 @@ public class Partido {
 	}
 
 	
+	
+	public void setGolesEq1(Integer golesEq1) {
+		this.golesEq1 = golesEq1;
+	}
+
+
+	public void setGolesEq2(Integer golesEq2) {
+		this.golesEq2 = golesEq2;
+	}
+
+	
+	
 	public String getFase() {
 		return Fase;
 	}
