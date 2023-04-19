@@ -86,6 +86,11 @@ public class App {
 	 ArrayList<String> nombres2 = new ArrayList<String>();
 	ArrayList<String> nombresFase1 = new ArrayList<String>();
 	ArrayList<String> nombresFase2 = new ArrayList<String>();
+	ArrayList<String> nombresRonda1 = new ArrayList<String>();
+	ArrayList<String> nombresRonda2 = new ArrayList<String>();
+	ArrayList<String> nombresRonda3 = new ArrayList<String>();
+	ArrayList<String> nombresRonda4 = new ArrayList<String>();
+	
 	//registrar el Driver
 	
 	try {
@@ -159,26 +164,36 @@ public class App {
 				Pronostico pronostico = new Pronostico(partidoCol,equipo,resultado,participante,ronda,fase);
 				
 				pronosticos.add(pronostico);
+				
 				participan.add(participante);
 		
 				
 			String  ganadores = pronostico.puntos(); 
 			String ganadoresxFase1 = pronostico.puntosxFase1();
 			String ganadoresxFase2 = pronostico.puntosxFase2();
-		   
-		
+		   String ganadoresxRonda1 = pronostico.puntosxRonda1();
+		   String ganadoresxRonda2 = pronostico.puntosxRonda2();
+		   String ganadoresxRonda3 = pronostico.puntosxRonda3();
+		   String ganadoresxRonda4 = pronostico.puntosxRonda4();
 			
 			 if(!ganadoresxFase1.equals("1")) {	  
 			      nombresFase1.add(ganadores);}
 			 
 			 if(!ganadoresxFase2.equals("1")) {	  
 			      nombresFase2.add(ganadores);}
-			
+			 if(!ganadoresxRonda1.equals("1")) {
+			       nombresRonda1.add(ganadoresxRonda1);}
+			 if(!ganadoresxRonda2.equals("1")) {
+			       nombresRonda2.add(ganadoresxRonda2);}
+			 if(!ganadoresxRonda3.equals("1")) {
+			       nombresRonda3.add(ganadoresxRonda3);}
+			 if(!ganadoresxRonda4.equals("1")) {
+			       nombresRonda1.add(ganadoresxRonda4);}
 			  if (ganadores.equals(pronostico.getParticipante())) {
 				 
 				  nombres2.add(ganadores);}
 				
-			
+			 
 			} } } 
 			// cierra la coneccion
 			con.close();
@@ -227,7 +242,7 @@ public class App {
 	
 	puntajes.add(puntaje);
 	
-			    	Integer puntosxronda= puntaje.getPuntosxPartido();
+			    	Integer puntosxPartido= puntaje.getPuntosxPartido();
 			    			
 			    	   Map<String, Integer> contador = new HashMap<>();
 
@@ -244,11 +259,15 @@ public class App {
 			           }
 			           for (String key : contador.keySet()) {					            
 				            Integer valor = contador.get(key);
-				            valor = valor * puntosxronda ;		               
+				            valor = valor * puntosxPartido ;		               
 			                contador.put(key, valor);
 				            	System.out.println(key + "= Puntos por partido = "+valor);
 			           
 			           }
+			           
+			           //// puntos extras por partido
+			           
+			           
 				            	Integer puntosxFase= puntaje.getPuntosxFase();
 				            
 			           
@@ -286,11 +305,77 @@ public class App {
 					   
 					    }
 					}
-					       
-			    
-			     
+						  //////// Puntos extras x Ronda
+						  
+							Integer puntosxRonda= puntaje.getPuntosxRonda();
+			 Map<String, Integer> contadorRonda1 = new HashMap<>();
+						  
+						  for (String participanteRonda1 : nombresRonda1) { 
+							  if (contadorRonda1.containsKey(participanteRonda1)) {				  
+						 contadorRonda1.put(participanteRonda1, contadorRonda1.get(participanteRonda1) + 1);
+                      } else { 
+                    						  
+						  contadorRonda1.put(participanteRonda1, 1); 
+						  }}
+						  
+						  for (String key : contadorRonda1.keySet()) {					            
+					            Integer valor = contadorRonda1.get(key);
+					            if (valor > 3) {
+					            	System.out.println(key + "= Puntos extras Ronda1 = "+puntosxRonda);
+					            }}     
+						
+							
+			    Map<String, Integer> contadorRonda2 = new HashMap<>();
+							  
+							  for (String participanteRonda2 : nombresRonda2) { 
+								  if (contadorRonda2.containsKey(participanteRonda2)) {				  
+							 contadorRonda2.put(participanteRonda2, contadorRonda2.get(participanteRonda2) + 1);
+	                      } else { 
+	                    						  
+							  contadorRonda2.put(participanteRonda2, 1); 
+							  }}
+							  
+							  for (String key : contadorRonda2.keySet()) {					            
+						            Integer valor = contadorRonda2.get(key);
+						            if (valor > 3) {
+						            	System.out.println(key + "= Puntos extras Ronda2 = "+puntosxRonda);
+						            }}     
+							  
+	              Map<String, Integer> contadorRonda3 = new HashMap<>();
+							  
+							  for (String participanteRonda3 : nombresRonda3) { 
+								  if (contadorRonda3.containsKey(participanteRonda3)) {				  
+							 contadorRonda3.put(participanteRonda3, contadorRonda3.get(participanteRonda3) + 1);
+	                      } else { 
+	                    						  
+							  contadorRonda3.put(participanteRonda3, 1); 
+							  }}
+							  
+							  for (String key : contadorRonda3.keySet()) {					            
+						            Integer valor = contadorRonda3.get(key);
+						            if (valor > 3) {
+						            	System.out.println(key + "= Puntos extras Ronda3 = "+puntosxRonda);
+						            }}     
+							  
+				    Map<String, Integer> contadorRonda4 = new HashMap<>();
+										  
+										  for (String participanteRonda4 : nombresRonda4) { 
+											  if (contadorRonda4.containsKey(participanteRonda4)) {				  
+										 contadorRonda4.put(participanteRonda4, contadorRonda4.get(participanteRonda4) + 1);
+				                      } else { 
+				                    						  
+										  contadorRonda4.put(participanteRonda4, 1); 
+										  }}
+										  
+										  for (String key : contadorRonda4.keySet()) {					            
+									            Integer valor = contadorRonda4.get(key);
+									            if (valor > 3) {
+									            	System.out.println(key + "= Puntos extras Ronda4 = "+puntosxRonda);
+									            }}     
+		}}}
+
+    }
 	
-		}}}}
 	
 	
 		

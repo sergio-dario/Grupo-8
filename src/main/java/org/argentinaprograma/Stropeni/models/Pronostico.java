@@ -112,8 +112,59 @@ public class Pronostico {
 				return participante;
 			} else {
 				return "1";
+				
+			}}
+		
+		
+		
+		public String puntosxRonda() {
+			EnumResultado resultadoReal = this.partido.resultado(getEquipo());
 			
-	}}}
+			if ((this.resultado.equals(resultadoReal))) {	
+				 return participante+","+ronda;
+			} else {
+				 return "1";
+			}}
+		public String puntosxRonda1() {
+			EnumResultado resultadoReal = this.partido.resultado(getEquipo());
+			
+			if ((this.resultado.equals(resultadoReal))&&(ronda.equals("1"))) {	
+				 return participante;
+			} else {
+				 return "1";
+			}}
+		
+	   public String puntosxRonda2() {
+		   
+		   EnumResultado resultadoReal = this.partido.resultado(getEquipo());
+			if ((this.resultado.equals(resultadoReal))&&(ronda.equals("2"))) {
+				
+				return participante;
+			} else {
+				return "1";
+				
+			}}
+			
+	   public String puntosxRonda3() {
+			EnumResultado resultadoReal = this.partido.resultado(getEquipo());
+			
+			if ((this.resultado.equals(resultadoReal))&&(ronda.equals("3"))) {	
+				 return participante;
+			} else {
+				 return "1";
+			}}
+		
+	   public String puntosxRonda4() {
+		   
+		   EnumResultado resultadoReal = this.partido.resultado(getEquipo());
+			if ((this.resultado.equals(resultadoReal))&&(ronda.equals("4"))) {
+				
+				return participante;
+			} else {
+				return "1";
+				
+			}}
+	}
 
 
 
