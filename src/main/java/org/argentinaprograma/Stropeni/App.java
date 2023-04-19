@@ -84,7 +84,8 @@ public class App {
 	Collection<Pronostico> pronosticos = new ArrayList<Pronostico>();
 	HashSet<String>participan=new HashSet<String>();
 	 ArrayList<String> nombres2 = new ArrayList<String>();
-	
+	ArrayList<String> nombresFase1 = new ArrayList<String>();
+	ArrayList<String> nombresFase2 = new ArrayList<String>();
 	//registrar el Driver
 	
 	try {
@@ -112,7 +113,7 @@ public class App {
 		    campos[5]=rs.getString(6);
 		   campos[6]=rs.getString(7);
 		    campos[7]=rs.getString(8);
-		//    campo[8]=rs.getInt(9);
+	
 		    
 		 
 	
@@ -162,18 +163,23 @@ public class App {
 		
 				
 			String  ganadores = pronostico.puntos(); 
-			String ganadoresxRonda = pronostico.puntosxRonda();
-		//	String ganadoresxFase = pronostico.
+			String ganadoresxFase1 = pronostico.puntosxFase1();
+			String ganadoresxFase2 = pronostico.puntosxFase2();
 		   
-	
 		
+			
+			 if(!ganadoresxFase1.equals("1")) {	  
+			      nombresFase1.add(ganadores);}
+			 
+			 if(!ganadoresxFase2.equals("1")) {	  
+			      nombresFase2.add(ganadores);}
+			
 			  if (ganadores.equals(pronostico.getParticipante())) {
 				 
-				  nombres2.add(ganadores);
+				  nombres2.add(ganadores);}
 				
-				  
-				  
-				} } } }
+			
+			} } } 
 			// cierra la coneccion
 			con.close();
 	
@@ -237,12 +243,32 @@ public class App {
 			              
 			               }
 			           }
-                    
-			         System.out.println();
-			//         System.out.println(Ronda.PuntosExtrasxRonda());
-			 //        System.out.println(Ronda.PuntosExtrasxFase());
-			         System.out.println(contador);
-	
+						
+						  Map<String, Integer> contadorFase1 = new HashMap<>();
+						  
+						  for (String participanteFase1 : nombresFase1) { 
+							  if (contadorFase1.containsKey(participanteFase1)) {				  
+						 contadorFase1.put(participanteFase1, contadorFase1.get(participanteFase1) + 1);
+                      } else { 
+                    	
+						  
+						  contadorFase1.put(participanteFase1, 1); 
+						  }}
+                      Map<String, Integer> contadorFase2 = new HashMap<>();
+						  
+						  for (String participanteFase2 : nombresFase2) { 
+							  if (contadorFase2.containsKey(participanteFase2)) {				  
+						 contadorFase2.put(participanteFase2, contadorFase2.get(participanteFase2) + 1);
+                      } else { 
+                    	
+						  
+						  contadorFase2.put(participanteFase2, 1); 
+						  }}
+			       
+			    System.out.println(contador+"->Los asiertos son 7 y 3 respectivamente, pero se multiplican x 2 por el valor de puntaje elegido");
+			        System.out.println(contadorFase1+"->para obtener puntaje extra en fase1 se necesitan 8 asiertos");
+			        System.out.println(contadorFase2+"->para obtener puntaje extra en fase2 se necesitan 2 asiertos");
+			     
 	
 		}}}}
 	

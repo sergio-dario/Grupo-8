@@ -93,24 +93,26 @@ public class Pronostico {
 			return "1";
 		}}
 	
-		public String puntosxRonda() {
+	
+			
+		public String puntosxFase1() {
 			EnumResultado resultadoReal = this.partido.resultado(getEquipo());
 			
-			if (this.resultado.equals(resultadoReal)) {
-			
-				 return participante+","+ronda;
+			if ((this.resultado.equals(resultadoReal))&&(fase.equals("1"))) {	
+				 return participante;
 			} else {
-				return "1";
+				 return "1";
 			}}
-			
-		public String puntosxFase() {
-			EnumResultado resultadoReal = this.partido.resultado(getEquipo());
-			
-			if (this.resultado.equals(resultadoReal)) {
-			
-				 return participante+","+fase;
+		
+	   public String puntosxFase2() {
+		   
+		   EnumResultado resultadoReal = this.partido.resultado(getEquipo());
+			if ((this.resultado.equals(resultadoReal))&&(fase.equals("2"))) {
+				
+				return participante;
 			} else {
 				return "1";
+			
 	}}}
 
 
