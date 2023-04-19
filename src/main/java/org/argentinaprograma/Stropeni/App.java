@@ -233,11 +233,10 @@ public class App {
 
 			           for (String participanteG : nombres2) {
 			               if (contador.containsKey(participanteG)) {
-			            	   
-			            	   // solo tengo que cambiar el 1 por el numero que quiera para aumentar el puntaje por ronda
+			            	
 			                   contador.put(participanteG, contador.get(participanteG) + 1);
 			               } else {
-			            	   // solo tengo que cambiar el 1 por el numero que quiera para aumentar el puntaje por ronda
+			            	
 			            	   
 			                   contador.put(participanteG, 1);
 			              
@@ -266,7 +265,7 @@ public class App {
 						  for (String key : contadorFase1.keySet()) {					            
 					            Integer valor = contadorFase1.get(key);
 					            if (valor > 7) {
-					            	System.out.println(key + "= Puntos extras Fase2 = "+puntosxFase);
+					            	System.out.println(key + "= Puntos extras Fase1 = "+puntosxFase);
 					            }}
 						  
                       Map<String, Integer> contadorFase2 = new HashMap<>();
@@ -282,8 +281,8 @@ public class App {
 			
 						  for (String key : contadorFase2.keySet()) {					            
 					            Integer valor = contadorFase2.get(key);
-					            if (valor > 1) {
-					            	System.out.println(key + "= Puntos extras Fase1 = "+puntosxFase);
+					            if (valor > 7) {
+					            	System.out.println(key + "= Puntos extras Fase2 = "+puntosxFase);
 					   
 					    }
 					}

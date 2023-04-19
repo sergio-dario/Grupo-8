@@ -7,5 +7,11 @@
 2,Senegal,0,0,P.Bajos,1
 2,Qatar,1,0,Senegal,1
 2,Ecuador,0,0,P.Bajos,1
-1,Argentina,1,0,P.Bajos,2
-2,Mexico,2,1,Senegal,2
+3,Arabia Saudita,1,0,Argentina,2
+3,Mexico,1,0,Polonia,2
+3,Mexico,1,3,Argentina,2
+3,Polonia,0,0,Arabia Saudita,2
+4,Ecuador,2,2,Qatar,2
+4,P.Bajos,5,0,Senegal,2
+4,Senegal,0,1,Qatar,2
+4,P.Bajos,2,2,Ecuador,2
