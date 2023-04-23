@@ -18,8 +18,8 @@ public class PronosticoTest {
 	private Equipo equipo2;
 	private Partido partido ;
 	private String participante;
-	private String Fase;
-	private String Ronda;
+	private Integer Fase;
+	private Integer Ronda;
 	
 	@Before
 	public void setUp() {

@@ -7,10 +7,10 @@ public class Pronostico {
 	private Equipo equipo;
 	private EnumResultado resultado;
     private String participante;
-    private String fase;
-    private String ronda;
+    private Integer fase;
+    private Integer ronda;
     
-	public Pronostico(Partido partido, Equipo equipo, EnumResultado resultado, String participante,String ronda,String fase) {
+	public Pronostico(Partido partido, Equipo equipo, EnumResultado resultado, String participante,Integer ronda,Integer fase) {
 		super();
 		this.partido = partido;
 		this.equipo = equipo;
@@ -21,26 +21,36 @@ public class Pronostico {
 	}
 
 
-	public String getFase() {
+
+	
+
+
+	public Integer getFase() {
 		return fase;
 	}
 
 
 
-	public void setFase(String fase) {
+
+
+
+	public void setFase(Integer fase) {
 		this.fase = fase;
 	}
 
 
-	public String getRonda() {
+
+
+
+
+	public Integer getRonda() {
 		return ronda;
 	}
 
 
-	public void setRonda(String ronda) {
+	public void setRonda(Integer ronda) {
 		this.ronda = ronda;
 	}
-
 
 
 	public Partido getPartido() {
@@ -95,21 +105,13 @@ public class Pronostico {
 	
 	
 			
-		public String puntosxFase1() {
-			EnumResultado resultadoReal = this.partido.resultado(getEquipo());
-			
-			if ((this.resultado.equals(resultadoReal))&&(fase.equals("1"))) {	
-				 return participante;
-			} else {
-				 return "1";
-			}}
 		
-	   public String puntosxFase2() {
+	   public String puntosxFase() {
 		   
 		   EnumResultado resultadoReal = this.partido.resultado(getEquipo());
-			if ((this.resultado.equals(resultadoReal))&&(fase.equals("2"))) {
+			if ((this.resultado.equals(resultadoReal))){
 				
-				return participante;
+				return participante+","+fase;
 			} else {
 				return "1";
 				
@@ -125,45 +127,7 @@ public class Pronostico {
 			} else {
 				 return "1";
 			}}
-		public String puntosxRonda1() {
-			EnumResultado resultadoReal = this.partido.resultado(getEquipo());
-			
-			if ((this.resultado.equals(resultadoReal))&&(ronda.equals("1"))) {	
-				 return participante;
-			} else {
-				 return "1";
-			}}
 		
-	   public String puntosxRonda2() {
-		   
-		   EnumResultado resultadoReal = this.partido.resultado(getEquipo());
-			if ((this.resultado.equals(resultadoReal))&&(ronda.equals("2"))) {
-				
-				return participante;
-			} else {
-				return "1";
-				
-			}}
-			
-	   public String puntosxRonda3() {
-			EnumResultado resultadoReal = this.partido.resultado(getEquipo());
-			
-			if ((this.resultado.equals(resultadoReal))&&(ronda.equals("3"))) {	
-				 return participante;
-			} else {
-				 return "1";
-			}}
-		
-	   public String puntosxRonda4() {
-		   
-		   EnumResultado resultadoReal = this.partido.resultado(getEquipo());
-			if ((this.resultado.equals(resultadoReal))&&(ronda.equals("4"))) {
-				
-				return participante;
-			} else {
-				return "1";
-				
-			}}
 	}
 
 
