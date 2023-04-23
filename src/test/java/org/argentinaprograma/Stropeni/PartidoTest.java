@@ -15,8 +15,8 @@ public class PartidoTest {
 	private Equipo equipo1;
 	private Equipo equipo2;
 	private Partido partido ;
-	private String Fase;
-	private String Ronda;
+	private Integer Fase;
+	private Integer Ronda;
 
 	@Before
 	public void setUp() {

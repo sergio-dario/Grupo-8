@@ -35,6 +35,7 @@ public class PronosticoTest {
 
 		// Escenario
 		Partido partido = new Partido(this.equipo1,this.equipo2,Ronda, Fase);
+		
 		Pronostico pronostico = new Pronostico(partido, this.equipo1, EnumResultado.PERDEDOR,participante,Ronda,Fase);
 
 		// Procesar
@@ -52,6 +53,7 @@ public class PronosticoTest {
 
 		// Escenario
 		Partido partido = new Partido(this.equipo1,this.equipo2,Ronda,Fase);
+		
 		Pronostico pronostico = new Pronostico(partido, this.equipo1, EnumResultado.EMPATE,participante,Ronda,Fase);
 
 		// Procesar

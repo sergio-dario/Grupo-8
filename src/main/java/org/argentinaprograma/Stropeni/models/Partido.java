@@ -6,10 +6,10 @@ public class Partido {
 	private Equipo equipo2;
 	private Integer golesEq1;
 	private Integer golesEq2;
-	private String Fase;
-	private String Ronda;
+	private Integer Fase;
+	private Integer Ronda;
 
-	public Partido(Equipo equipo1, Equipo equipo2,String Ronda,String Fase) {
+	public Partido(Equipo equipo1, Equipo equipo2,Integer Ronda,Integer Fase) {
 	
 		this.equipo1 = equipo1;
 		this.equipo2 = equipo2;
@@ -29,25 +29,29 @@ public class Partido {
 	}
 
 	
-	
-	public String getFase() {
+
+	public Integer getFase() {
 		return Fase;
 	}
 
 
-	public void setFase(String fase) {
+
+	public void setFase(Integer fase) {
 		Fase = fase;
 	}
 
 
-	public String getRonda() {
+
+	public Integer getRonda() {
 		return Ronda;
 	}
 
 
-	public void setRonda(String ronda) {
+
+	public void setRonda(Integer ronda) {
 		Ronda = ronda;
 	}
+
 
 
 	public Equipo getEquipo1() {

@@ -47,13 +47,17 @@ public class App {
 
 			
 			String[] campos = lineaResultado.split(",");
-			String Fase=null;
-			String Ronda=null;
+			Integer Fase=null;
+			Integer Ronda=null;
 			
 			Equipo equipo1 = new Equipo(campos[1]);
 			Equipo equipo2 = new Equipo(campos[4]);
-			Fase=campos[5];
-			Ronda=campos[0];
+			
+			
+			Ronda=Integer.parseInt(campos[0]);
+			Fase= Integer.parseInt(campos[5]);
+			
+			
 			Partido partido = new Partido(equipo1, equipo2,Ronda,Fase);
 			partido.setGolesEq1(Integer.parseInt(campos[2]));
 			partido.setGolesEq2(Integer.parseInt(campos[3]));
