@@ -1,4 +1,8 @@
 org\argentinaprograma\Stropeni\models\Pronostico.class
+org\argentinaprograma\Stropeni\models\Ronda.class
 org\argentinaprograma\Stropeni\models\EnumResultado.class
+org\argentinaprograma\Stropeni\models\package-info.class
 org\argentinaprograma\Stropeni\models\Equipo.class
+org\argentinaprograma\Stropeni\App.class
+org\argentinaprograma\Stropeni\models\Puntaje.class
 org\argentinaprograma\Stropeni\models\Partido.class

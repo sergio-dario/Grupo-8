@@ -20,7 +20,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>org.argentinaprograma.Stropeni.App.java</mainClass>
+                  <mainClass>org.argentinaprograma.Stropeni.App</mainClass>
                 </transformer>
               </transformers>
             </configuration>
