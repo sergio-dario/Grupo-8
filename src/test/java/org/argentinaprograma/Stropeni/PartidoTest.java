@@ -21,32 +21,41 @@ public class PartidoTest {
 	@Before
 	public void setUp() {
 		
-		this.partido.setGolesEq1(3);
-		this.partido.setGolesEq2(3);
+		
 		this.equipo1 = new Equipo("Boca");
 		this.equipo2 = new Equipo("San Lorenzo");
-		this.partido = new Partido(this.equipo1, this.equipo2,Ronda,Fase );
+		this.Fase = 1;
+		this.Ronda = 1;
+		this.partido = new Partido(this.equipo1, this.equipo2,this.Ronda,this.Fase );
+		this.partido.setGolesEq1(3);
+		this.partido.setGolesEq2(3);
 	}
 
 	@Test
-	public void testPartidoGanadorPerdedor() {
+	public void testPartidoPerdedor() {
 
-		// nuestro escenario
-		
-
-		// Procesar
+		this.partido.setGolesEq1(1);
+		this.partido.setGolesEq2(3);
 		EnumResultado resultadoObtenido1 = partido.resultado(this.equipo1);
-		EnumResultado resultadoObtenido2 = partido.resultado(this.equipo2);
+
 
 		// Evaluar
 		assertEquals(EnumResultado.PERDEDOR, resultadoObtenido1);
+
+
+	}
+	@Test
+	public void testPartidoGanadoo() {
+		this.partido.setGolesEq1(3);
+		this.partido.setGolesEq2(1);
+		EnumResultado resultadoObtenido2 = partido.resultado(this.equipo2);
 		assertEquals(EnumResultado.GANADOR, resultadoObtenido2);
 
 	}
-
 	@Test
 	public void testPartidoEmpatado() {
-		
+		this.partido.setGolesEq1(3);
+		this.partido.setGolesEq2(3);
 
 		EnumResultado resultadoObtenido = partido.resultado(this.equipo1);
 		assertEquals(EnumResultado.EMPATE, resultadoObtenido);
