@@ -1,60 +1,59 @@
 package org.argentinaprograma.Stropeni.models;
 
-import java.util.List;
-
-
-
-import java.util.ArrayList;
 
 public class Ronda {
-	
-	private String nroFase;
-	private String nroRonda;
-	private List<Ronda>partidos;
-	
-	
-	public Ronda(String nroFase,String nroRonda) {
-		this.nroFase= nroFase;
-		this.nroRonda= nroRonda;
-			this.partidos = new ArrayList<Ronda>();
-      }
 
-     public void agregarRondadePartidos(Ronda ronda) {
-         	this.partidos.add(ronda);	
-        }
-
-       public String getNroFase() {
-		return nroFase;
+   private Integer Fase;
+    private Integer Ronda;
+    private Equipo equipo1;
+    private Equipo equipo2;
+    
+    public Ronda(Equipo equipo1, Equipo equipo2,Integer Ronda, Integer Fase) {
+    	this.equipo1 = equipo1;
+		this.equipo2 = equipo2;
+		this.Ronda = Ronda;
+    	this.Fase = Fase;
+    }
+	
+	public Integer getFase() {
+		return Fase;
 	}
 
-	public void setNroFase(String nroFase) {
-		this.nroFase = nroFase;
+	public void setFase(Integer fase) {
+		Fase = fase;
 	}
 
-	public String getNroRonda() {
-		return nroRonda;
+	public Integer getRonda() {
+		return Ronda;
 	}
 
-	public void setNroRonda(String nroRonda) {
-		this.nroRonda = nroRonda;
+
+	public void setRonda(Integer ronda) {
+		Ronda = ronda;
 	}
 
-	public List<Ronda> getPartidos() {
-		return partidos;
+
+
+	public Equipo getEquipo1() {
+		return equipo1;
 	}
-	public void setPartidos(List<Ronda> partidos) {
-		this.partidos = partidos;
+
+	public void setEquipo1(Equipo equipo1) {
+		this.equipo1 = equipo1;
 	}
-	
-
-	
-		}
-	
 
 
 
-	
-	
-	
+	public Equipo getEquipo2() {
+		return equipo2;
+	}
 
 
+
+	public void setEquipo2(Equipo equipo2) {
+		this.equipo2 = equipo2;
+	}
+
+   
+}
+			

@@ -97,9 +97,26 @@ public class Partido {
 		}	else {
 				return EnumResultado.PERDEDOR;
 			}	
-		}
-
-	}}
+		}}
+   public Integer numeroRondas() {
+		   
+			if ((this.Ronda.equals(1))){
+				
+				return Ronda;
+			} else {
+				return 0;
+				
+			}}
+   public Integer numeroFases() {
+	   
+		if ((this.Fase.equals(1))){
+			
+			return Fase;
+		} else {
+			return 0;
+			
+		}}
+	}
 
 
 

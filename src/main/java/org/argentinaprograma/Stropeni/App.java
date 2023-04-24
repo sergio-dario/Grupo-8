@@ -25,9 +25,10 @@ public class App {
     
 	// Leer resultados
 	Collection<Partido> partidos = new ArrayList<Partido>();
-	ArrayList<Ronda> rondas = new ArrayList<Ronda>();
+	List<Ronda> rondas = new ArrayList<>();
+	List<Integer> NroRondas = new ArrayList<>();
+	List<Integer> NroFases = new ArrayList<>();
 	
-   
 	Path pathResultados = Paths.get("src\\main\\java\\org\\argentinaprograma\\Stropeni\\models\\resultado.csv");
 	List<String> lineasResultados = null;
     try {
@@ -67,13 +68,23 @@ public class App {
 			
   // agregue rondas
 			
-		
-			Ronda ronda = new Ronda(campos[5], campos[0]);
-	        ronda.agregarRondadePartidos(ronda);;	      
-	       rondas.add(ronda);
+			
+	        Ronda ronda = new Ronda(equipo1,equipo2,Ronda,Fase);
+	        rondas.add(ronda);
+	       
+	// determino cual es el numero max de rondas y Fases
 	        
-	 
-		}}
+	        Integer NumeroRondas = partido.numeroRondas();
+	       if (!NumeroRondas.equals(0)) {
+	    	   NroRondas.add(NumeroRondas);
+	   
+	       }
+	       Integer NumeroFases = partido.numeroFases();
+	       if (!NumeroFases.equals(0)) {
+	    	   NroFases.add(NumeroFases);
+	       }
+	       }
+		}
 	
 	// Leer pronostico
 	
@@ -165,8 +176,7 @@ public class App {
 				
 			String  ganadores = pronostico.puntos(); 
 			String ganadoresxFase = pronostico.puntosxFase();	
-		   String ganadoresxRonda = pronostico.puntosxRonda();
-	
+		   String ganadoresxRonda = pronostico.puntosxRonda();	
 		
 		 
 			 if(!ganadoresxFase.equals("1")) {	  
@@ -267,7 +277,8 @@ public class App {
 					  
 					  for (String key : contadorRonda.keySet()) {					            
 				            Integer valor = contadorRonda.get(key);
-				            if (valor >= 4) {
+				            
+				            if (valor >=NroRondas.size()) {
 				            	System.out.println(key + " ronda = Puntos extras Ronda = "+puntosxRonda);
 				            }}     
 					
@@ -288,13 +299,13 @@ public class App {
 						  
 						  for (String key : contadorFase.keySet()) {					            
 					            Integer valor = contadorFase.get(key);
-					            if (valor >=8) {
+					            if (valor >=NroFases.size()) {
 					            	System.out.println(key + "= Puntos extras Fase = "+puntosxFase);
 					            }}
 						  
                   
 					
-							
+						
 			   
 		}}}
 
