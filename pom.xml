@@ -45,7 +45,17 @@
     <scope>test</scope>
 </dependency>
 
-  <!-- https://mvnrepository.com/artifact/com.github.vlsi.compactmap/compactmap -->
+  <!--<dependency>
+  <groupId>commons-beanutils</groupId>
+  <artifactId>commons-beanutils</artifactId>
+  <version>1.9.4</version>
+  <exclusions>
+    <exclusion>
+      <groupId>*</groupId>
+      <artifactId>META-INF/MANIFEST.MF</artifactId>
+    </exclusion>
+  </exclusions>
+</dependency> https://mvnrepository.com/artifact/com.github.vlsi.compactmap/compactmap -->
 <dependency>
 			<groupId>com.opencsv</groupId>
 			<artifactId>opencsv</artifactId>
